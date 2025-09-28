@@ -1,0 +1,27 @@
+services:
+ 
+  # Set up another postgres db as per business requirement
+  db:
+    build:
+      context: ../postgres
+      dockerfile: Dockerfile
+    # image: postgres
+    restart: always
+    shm_size: 128mb
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin123
+      POSTGRES_DB: postgres
+
+    # Alternative to using Dockerfile for postgres
+    # volumes:
+    #   - ../postgres/sql:/docker-entrypoint-initdb.d
+    
+    ports:
+      - "5433:5432"   # expose externally if needed (avoid clashing with Astro's metadata db)
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "8083:8080"
