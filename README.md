@@ -24,6 +24,9 @@
         └── init_db.sql
 ```
 
+## Setup
+1. Install astro CLI: https://www.astronomer.io/docs/astro/cli/install-cli
+
 ## To run
 1. go to airflow folder
 2. run `astro dev start` to start services
