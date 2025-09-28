@@ -4,24 +4,24 @@
 ```sh
 .
 ├── README.md
-└── airflow
+├── airflow
+│   ├── Dockerfile
+│   ├── README.md
+│   ├── airflow_settings.yaml
+│   ├── dags
+│   │   └── exampledag.py
+│   ├── docker-compose.override.yml
+│   ├── include
+│   ├── packages.txt
+│   ├── plugins
+│   ├── requirements.txt
+│   └── tests
+│       └── dags
+│           └── test_dag_example.py
+└── postgres
     ├── Dockerfile
-    ├── README.md
-    ├── airflow_settings.yaml
-    ├── dags
-    │   └── exampledag.py
-    ├── docker-compose.override.yml
-    ├── include
-    ├── packages.txt
-    ├── plugins
-    ├── postgres
-    │   ├── Dockerfile
-    │   └── sql
-    │       └── init_db.sql
-    ├── requirements.txt
-    └── tests
-        └── dags
-            └── test_dag_example.py
+    └── sql
+        └── init_db.sql
 ```
 
 ## To run
