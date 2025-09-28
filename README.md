@@ -9,8 +9,6 @@
     ├── README.md
     ├── airflow_settings.yaml
     ├── dags
-    │   ├── __pycache__
-    │   │   └── exampledag.cpython-312.pyc
     │   └── exampledag.py
     ├── docker-compose.override.yml
     ├── include
