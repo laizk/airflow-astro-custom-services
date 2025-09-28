@@ -1,6 +1,6 @@
 # airflow-astro-custom-services
 
-Project tree:
+## Project tree:
 ```sh
 .
 ├── README.md
@@ -26,18 +26,29 @@ Project tree:
             └── test_dag_example.py
 ```
 
-Scenario:
+## To run
+1. go to airflow folder
+2. run `astro dev start` to start services
+3. run `astro dev stop` to stop services
+4. run `astro dev kill` to remove the images
+
+## Postgres DB access
+1. path: `localhost:8083`
+2. username: admin
+3. password: admin123
+
+## Scenario:
 1. I am using astro cli to setup airflow. 
 2. I wanted to spin up airflow and a separate postgres DB. 
 3. For the postgres DB, I wanted to initialize it with a table already created.
 4. Initializing a table in postgres when deployed needs a mechanism to run SQL DDL statements which are in a separate Dockerfile. 
 
-Problem:
+## Problem:
 1. The override file `./airflow/docker-compose.override.yml` doesn't use the custom Dockerfile (`./postgres/Dockerfile`). I've already  properly referenced the Dockerfile through the build context I defined in the docker-compose file.
 2. Am I doing it wrongly?
 3. Is it even possible to do this using Astro CLI?
 
-Current solution:
+## Current solution:
 1. The only solution I have now is not using the Dockerfile. But rather defining the volume mapping the directory with the SQL statements to the docker entrypoint as defined below.
 2. But I still do wanted to know if it is possible and how I can customize images for other services using astro CLI.
 
